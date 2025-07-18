@@ -1,6 +1,9 @@
+// Express
 import { Request, Response, NextFunction } from 'express';
+
+// Helpers
 import { ResponseHelper } from '../helpers/responseHelper';
-import { removeSymbolRegex } from '../helpers/dataDebugging';
+import { convertToTwoCharCode, removeSymbolRegex } from '../helpers/dataDebugging';
 
 export class InfoController {
   static async createLead(req: Request, res: Response, next: NextFunction) {
@@ -40,10 +43,10 @@ export class InfoController {
         email: customerEmail,
         city: customerCity,
         address: customerAddress,
-        state: customerState,
+        state: convertToTwoCharCode(customerState),
         zip: customerZip,
         zip4: customerZip4,
-        country: customerCountry,
+        country: convertToTwoCharCode(customerCountry),
         comment: customerSkinCondition,
       };
 
