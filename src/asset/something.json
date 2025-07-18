@@ -1,0 +1,973 @@
+[{
+  "type": "post_call_transcription",
+  "event_timestamp": 1752593361,
+  "data": {
+    "agent_id": "agent_01jzg2ck1gfhcskcqxnnr0bzde",
+    "conversation_id": "conv_01k07b7ydzf3qvhebczfz0fatz",
+    "status": "done",
+    "user_id": null,
+    "transcript": [
+      {
+        "role": "agent",
+        "message": "Hola, soy CATA, tu asesora especializada en...",
+        "tool_calls": [],
+        "tool_results": [],
+        "feedback": null,
+        "llm_override": null,
+        "time_in_call_secs": 0,
+        "conversation_turn_metrics": null,
+        "rag_retrieval_info": null,
+        "llm_usage": null,
+        "interrupted": true,
+        "original_message": "Hola, soy CATA, tu asesora especializada en tratamientos Dermaccina.\n\nEstoy encantada de poder conversar contigo hoy. Mi especialidad es ayudarte a encontrar exactamente el tratamiento que tu piel necesita para lucir espectacular.\n\n¿Puedo preguntarte qué es lo que más te preocupa de tu piel en este momento? Me encantaría conocerte mejor para recomendarte la solución perfecta.",
+        "source_medium": null
+      },
+      {
+        "role": "user",
+        "message": "Hola, mi nombre es Catalina Forero. Mi número es 316-860-3691 y tengo 18 años.",
+        "tool_calls": [],
+        "tool_results": [],
+        "feedback": null,
+        "llm_override": null,
+        "time_in_call_secs": 3,
+        "conversation_turn_metrics": null,
+        "rag_retrieval_info": null,
+        "llm_usage": null,
+        "interrupted": false,
+        "original_message": null,
+        "source_medium": "audio"
+      },
+      {
+        "role": "agent",
+        "message": "¡Hola, Catalina! Encantada de conocerte. Antes de continuar, quiero informarte que esta llamada está siendo grabada para...",
+        "tool_calls": [],
+        "tool_results": [],
+        "feedback": null,
+        "llm_override": null,
+        "time_in_call_secs": 17,
+        "conversation_turn_metrics": {
+          "metrics": {
+            "convai_llm_service_ttf_sentence": {
+              "elapsed_time": 0.7978436583653092
+            },
+            "convai_llm_service_ttfb": {
+              "elapsed_time": 0.7457314133644104
+            }
+          }
+        },
+        "rag_retrieval_info": {
+          "chunks": [],
+          "embedding_model": "multilingual_e5_large_instruct",
+          "retrieval_query": "¿Cuál es tu especialización?\n",
+          "rag_latency_secs": 0.4539108229801059
+        },
+        "llm_usage": {
+          "model_usage": {
+            "gpt-4o-mini": {
+              "input": {
+                "tokens": 6775,
+                "price": 0.00101625
+              },
+              "input_cache_read": {
+                "tokens": 0,
+                "price": 0
+              },
+              "input_cache_write": {
+                "tokens": 0,
+                "price": 0
+              },
+              "output_total": {
+                "tokens": 128,
+                "price": 0.0000768
+              }
+            }
+          }
+        },
+        "interrupted": true,
+        "original_message": "¡Hola, Catalina! Encantada de conocerte. Antes de continuar, quiero informarte que esta llamada está siendo grabada para fines de calidad y capacitación. Al continuar en la línea, autorizas que esta conversación sea grabada. ¿Estás de acuerdo en continuar? ¿Qué es lo que más te preocupa de tu piel en este momento? Me encantaría conocerte mejor para recomendarte la solución perfecta.",
+        "source_medium": null
+      }
+    ],
+    "metadata": {
+      "start_time_unix_secs": 1752593332,
+      "accepted_time_unix_secs": 1752593332,
+      "call_duration_secs": 25,
+      "cost": 107,
+      "deletion_settings": {
+        "deletion_time_unix_secs": null,
+        "deleted_logs_at_time_unix_secs": null,
+        "deleted_audio_at_time_unix_secs": null,
+        "deleted_transcript_at_time_unix_secs": null,
+        "delete_transcript_and_pii": false,
+        "delete_audio": false
+      },
+      "feedback": {
+        "overall_score": null,
+        "likes": 0,
+        "dislikes": 0
+      },
+      "authorization_method": "authorization_header",
+      "charging": {
+        "dev_discount": true,
+        "is_burst": false,
+        "tier": "pro",
+        "llm_usage": {
+          "irreversible_generation": {
+            "model_usage": {
+              "gpt-4o-mini": {
+                "input": {
+                  "tokens": 6775,
+                  "price": 0.00101625
+                },
+                "input_cache_read": {
+                  "tokens": 0,
+                  "price": 0
+                },
+                "input_cache_write": {
+                  "tokens": 0,
+                  "price": 0
+                },
+                "output_total": {
+                  "tokens": 128,
+                  "price": 0.0000768
+                }
+              }
+            }
+          },
+          "initiated_generation": {
+            "model_usage": {
+              "gpt-4o-mini": {
+                "input": {
+                  "tokens": 15132,
+                  "price": 0.0022697999999999998
+                },
+                "input_cache_read": {
+                  "tokens": 0,
+                  "price": 0
+                },
+                "input_cache_write": {
+                  "tokens": 0,
+                  "price": 0
+                },
+                "output_total": {
+                  "tokens": 133,
+                  "price": 0.0000798
+                }
+              }
+            }
+          }
+        },
+        "llm_price": 0.0023496,
+        "llm_charge": 13,
+        "call_charge": 94
+      },
+      "phone_call": null,
+      "batch_call": null,
+      "termination_reason": "Client disconnected: 1005",
+      "error": null,
+      "main_language": "es",
+      "rag_usage": {
+        "usage_count": 1,
+        "embedding_model": "multilingual_e5_large_instruct"
+      },
+      "text_only": false,
+      "features_usage": {
+        "language_detection": {
+          "enabled": true,
+          "used": false
+        },
+        "transfer_to_agent": {
+          "enabled": false,
+          "used": false
+        },
+        "transfer_to_number": {
+          "enabled": false,
+          "used": false
+        },
+        "multivoice": {
+          "enabled": false,
+          "used": false
+        },
+        "pii_zrm_workspace": false,
+        "pii_zrm_agent": false
+      },
+      "eleven_assistant": {
+        "is_eleven_assistant": false
+      },
+      "initiator_id": "uNRblYzDO7X4ghBq0MU4sc6Ucby2",
+      "conversation_initiation_source": "unknown",
+      "conversation_initiation_source_version": null
+    },
+    "analysis": {
+      "evaluation_criteria_results": {
+        "cata_recoleccion_datos": {
+          "criteria_id": "cata_recoleccion_datos",
+          "result": "success",
+          "rationale": "El usuario proporciona datos importantes como su nombre, número de teléfono y edad, lo que indica una recolección de datos exitosa al inicio de la conversación."
+        },
+        "cata_experiencia_cliente": {
+          "criteria_id": "cata_experiencia_cliente",
+          "result": "failure",
+          "rationale": "La conversación es demasiado corta para evaluar la experiencia positiva del cliente. No hay suficiente interacción para determinar si el cliente tuvo una experiencia positiva."
+        },
+        "cata_protocolo_ventas": {
+          "criteria_id": "cata_protocolo_ventas",
+          "result": "unknown",
+          "rationale": "La conversación es demasiado corta para determinar si se adhiere al protocolo de ventas. No hay suficiente información sobre el proceso de venta o los pasos que el agente debe seguir."
+        },
+        "cata_manejo_objeciones": {
+          "criteria_id": "cata_manejo_objeciones",
+          "result": "unknown",
+          "rationale": "La conversación es demasiado corta para evaluar el manejo efectivo de objeciones. No hay ninguna objeción planteada por el usuario en el fragmento proporcionado."
+        },
+        "cata_calificacion_lead": {
+          "criteria_id": "cata_calificacion_lead",
+          "result": "unknown",
+          "rationale": "La conversación se interrumpe abruptamente después del saludo inicial. No hay información suficiente para determinar si se verificó la correcta calificación del prospecto."
+        },
+        "cata_venta_exitosa": {
+          "criteria_id": "cata_venta_exitosa",
+          "result": "unknown",
+          "rationale": "La conversación se interrumpe demasiado pronto para determinar si se completó una venta exitosa. No hay información sobre la intención de compra del usuario ni sobre la oferta de algún producto o servicio por parte del agente."
+        }
+      },
+      "data_collection_results": {
+        "condition_duration_months": {
+          "data_collection_id": "condition_duration_months",
+          "value": 0,
+          "json_schema": {
+            "type": "integer",
+            "description": "Convierte la duración del problema a meses. \"2 años\" = 24, \"6 meses\" = 6, \"toda la vida\" = 360 (30 años), \"hace poco\" = 1. Si se menciona cuándo empezó, calcula los meses transcurridos. Si no se especifica tiempo, retorna 0.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "No se menciona la duración de ningún problema en el texto proporcionado. Por lo tanto, el valor debe ser 0."
+        },
+        "follow_up_scheduled": {
+          "data_collection_id": "follow_up_scheduled",
+          "value": false,
+          "json_schema": {
+            "type": "boolean",
+            "description": "Determina si se programó un seguimiento específico. Retorna true si se acordó \"llamar mañana\", \"contactar en una semana\", \"enviar información por WhatsApp\", o cualquier acción de seguimiento con tiempo definido. Retorna false si no se acordaron pasos específicos.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "No se puede determinar si se programó un seguimiento específico basándonos únicamente en el saludo inicial y la presentación de la usuaria. No hay mención de llamadas futuras, envío de información, o cualquier otra acción de seguimiento."
+        },
+        "discount_percentage": {
+          "data_collection_id": "discount_percentage",
+          "value": 0,
+          "json_schema": {
+            "type": "integer",
+            "description": "Extrae el porcentaje de descuento ofrecido. \"60% de descuento\" = 60, \"50% off\" = 50, \"mitad de precio\" = 50. Si se ofrece descuento en cantidad fija, calcula el porcentaje aproximado. Si no se ofreció descuento, retorna 0.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "No se menciona ningún descuento en la conversación proporcionada. Por lo tanto, el valor es 0."
+        },
+        "condition_severity_score": {
+          "data_collection_id": "condition_severity_score",
+          "value": 0,
+          "json_schema": {
+            "type": "integer",
+            "description": "Evalúa la severidad del problema en una escala del 1 al 10 basándote en las palabras del cliente. 1-3: leve (\"un poco\", \"no es grave\"), 4-6: moderado (\"me molesta\", \"bastante\"), 7-10: severo (\"terrible\", \"no puedo salir\", \"afecta mi vida\"). Si no se puede determinar, retorna 0.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "No se puede determinar la severidad del problema ya que el usuario solo se presenta y no menciona ningún problema o queja. Por lo tanto, el valor es 0."
+        },
+        "skin_condition": {
+          "data_collection_id": "skin_condition",
+          "value": "Problema de piel no especificado",
+          "json_schema": {
+            "type": "string",
+            "description": "Extrae la condición dermatológica específica que menciona el cliente. Busca términos como \"vitiligo\", \"psoriasis\", \"acné\", \"hongos\", \"dermatitis\", \"eczema\", \"manchas\", \"cicatrices\". Si el cliente describe síntomas sin nombrar la condición, extrae la descripción exacta. Si no se especifica, retorna \"Problema de piel no especificado\".",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "El cliente no menciona ninguna condición dermatológica específica en el fragmento de conversación proporcionado. Por lo tanto, se retorna \"Problema de piel no especificado\"."
+        },
+        "customer_age": {
+          "data_collection_id": "customer_age",
+          "value": 18,
+          "json_schema": {
+            "type": "integer",
+            "description": "Extrae la edad numérica del cliente cuando se menciona directamente (\"Tengo 35 años\", \"Soy de 42 años\"). Si se menciona un rango de edad (\"Entre 30 y 35\"), extrae el número promedio (32). Si no se menciona edad específica, retorna 0.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "El usuario menciona explícitamente su edad: 'tengo 18 años'. Por lo tanto, se extrae el número 18."
+        },
+        "customer_full_name": {
+          "data_collection_id": "customer_full_name",
+          "value": "Catalina Forero",
+          "json_schema": {
+            "type": "string",
+            "description": "Extrae el nombre completo del cliente de la transcripción. Busca cuando CATA pregunta \"¿Cuál es su nombre completo?\" o cuando el cliente se presenta diciendo \"Mi nombre es...\", \"Soy...\", \"Me llamo...\". Si solo se menciona el primer nombre, extrae únicamente eso. Si no se proporciona nombre, retorna \"No proporcionado\".",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "El cliente se presenta al inicio de la conversación diciendo \"Hola, mi nombre es Catalina Forero.\", por lo tanto, extraigo el nombre completo \"Catalina Forero\"."
+        },
+        "interest_level_score": {
+          "data_collection_id": "interest_level_score",
+          "value": 5,
+          "json_schema": {
+            "type": "integer",
+            "description": "Evalúa el nivel de interés del cliente en una escala del 1 al 10. 1-3: bajo interés (\"no me convence\", \"no creo\"), 4-6: interés moderado (\"suena interesante\", \"tal vez\"), 7-10: alto interés (\"me encanta\", \"quiero probarlo\", \"suena perfecto\"). Si no se puede determinar, retorna 5.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "No se puede determinar el nivel de interés del cliente basándonos en el saludo inicial y la información personal proporcionada. No hay ninguna indicación de interés en ningún producto o servicio."
+        },
+        "available_budget_amount": {
+          "data_collection_id": "available_budget_amount",
+          "value": 0,
+          "json_schema": {
+            "type": "number",
+            "description": "Extrae el monto numérico del presupuesto disponible. \"$200\" = 200.00, \"doscientos dólares\" = 200.00, \"entre $100 y $300\" = 200.00 (promedio). Si dice \"lo que sea necesario\" = 999.99, \"no mucho\" = 50.00, \"tengo limitaciones\" = 100.00. Si no se menciona, retorna 0.00.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "No se menciona ninguna información sobre el presupuesto disponible en la conversación proporcionada. Por lo tanto, el valor predeterminado es 0.00."
+        },
+        "customer_phone": {
+          "data_collection_id": "customer_phone",
+          "value": "316-860-3691",
+          "json_schema": {
+            "type": "string",
+            "description": "Identifica el número de teléfono del cliente mencionado en la conversación. Busca patrones como números de 10 dígitos, códigos de área, o cuando CATA pregunta \"¿Cuál es su número de teléfono?\". Formato esperado: +1-XXX-XXX-XXXX o similar. Si no se proporciona, retorna \"No proporcionado\".",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "El usuario proporciona su número de teléfono como 316-860-3691 en el mensaje a las 2025-07-15T15:28:55+00:00."
+        },
+        "sale_confirmed": {
+          "data_collection_id": "sale_confirmed",
+          "value": false,
+          "json_schema": {
+            "type": "boolean",
+            "description": "Determina si el cliente confirmó la compra al final de la conversación. Retorna true si dice \"sí, lo compro\", \"acepto\", \"procede con la orden\", o proporciona datos de envío. Retorna false para cualquier otra respuesta como \"voy a pensarlo\", \"no me interesa\", \"llámame después\".",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "La conversación termina abruptamente y no hay ninguna indicación de que la cliente haya confirmado la compra. No hay frases como \"sí, lo compro\", \"acepto\", \"procede con la orden\", ni se proporcionan datos de envío."
+        },
+        "has_tried_treatments": {
+          "data_collection_id": "has_tried_treatments",
+          "value": null,
+          "json_schema": {
+            "type": "boolean",
+            "description": "Determina si el cliente ha probado tratamientos anteriores. Retorna true si menciona cualquier medicamento, crema, tratamiento médico, remedios caseros, o visitas a dermatólogos. Retorna false si dice \"nunca he probado nada\" o \"es la primera vez que busco tratamiento\".",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "No se puede determinar si la usuaria ha probado tratamientos anteriores basándose en la información proporcionada en el transcript. La conversación se interrumpe antes de que se pueda obtener esa información."
+        },
+        "customer_location": {
+          "data_collection_id": "customer_location",
+          "value": "No proporcionado",
+          "json_schema": {
+            "type": "string",
+            "description": "Identifica la ciudad, estado o país donde vive el cliente. Busca menciones como \"Vivo en Miami\", \"Soy de Orlando\", \"Estoy en Florida\". Incluye ciudad y estado si ambos se mencionan. Si no se proporciona, retorna \"No proporcionado\".",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "El usuario no proporciona información sobre su ubicación en el mensaje. Por lo tanto, se retorna \"No proporcionado\"."
+        },
+        "interested_in_financing": {
+          "data_collection_id": "interested_in_financing",
+          "value": false,
+          "json_schema": {
+            "type": "boolean",
+            "description": "Determina si el cliente muestra interés en opciones de financiamiento o pagos en cuotas. Retorna true si pregunta sobre \"pagos\", \"cuotas\", \"financiamiento\", o si CATA ofrece estas opciones y el cliente responde positivamente. Retorna false si prefiere pago único o no muestra interés.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "El cliente no pregunta sobre opciones de financiamiento, pagos en cuotas, ni se le ofrecen estas opciones en el extracto proporcionado. Por lo tanto, se asume que no muestra interés en estas opciones."
+        },
+        "price_mentioned_amount": {
+          "data_collection_id": "price_mentioned_amount",
+          "value": 0,
+          "json_schema": {
+            "type": "number",
+            "description": "Extrae el precio numérico que CATA mencionó para el producto. \"$199.99\" = 199.99, \"doscientos dólares\" = 200.00. Si se mencionan descuentos, extrae el precio final con descuento. Si no se menciona precio, retorna 0.00.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "No se menciona ningún precio en la conversación proporcionada. Por lo tanto, el valor extraído es 0.00."
+        }
+      },
+      "call_successful": "failure",
+      "transcript_summary": "CATA introduces itself as an advisor. Catalina Forero provides her name, phone number, and age (18). CATA informs Catalina that the call is being recorded.\n"
+    },
+    "conversation_initiation_client_data": {
+      "conversation_config_override": {
+        "tts": {
+          "voice_id": null
+        },
+        "conversation": {
+          "text_only": null
+        },
+        "agent": {
+          "first_message": null,
+          "language": "es",
+          "prompt": null
+        }
+      },
+      "custom_llm_extra_body": {},
+      "user_id": null,
+      "dynamic_variables": {
+        "system__agent_id": "agent_01jzg2ck1gfhcskcqxnnr0bzde",
+        "system__conversation_id": "conv_01k07b7ydzf3qvhebczfz0fatz",
+        "system__caller_id": null,
+        "system__called_number": null,
+        "system__call_duration_secs": 24,
+        "system__time_utc": "2025-07-15T15:29:17.544267+00:00",
+        "system__call_sid": null
+      }
+    }
+  }
+},
+{
+  "type": "post_call_transcription",
+  "event_timestamp": 1752618135,
+  "data": {
+    "agent_id": "agent_01jzg2ck1gfhcskcqxnnr0bzde",
+    "conversation_id": "conv_01k082vbn2ff7891sfb80zpkdd",
+    "status": "done",
+    "user_id": null,
+    "transcript": [
+      {
+        "role": "agent",
+        "message": "Hola, soy CATA, tu asesora especializada en tratamientos Dermaccina.\nEstoy encantada de poder conversar...",
+        "tool_calls": [],
+        "tool_results": [],
+        "feedback": null,
+        "llm_override": null,
+        "time_in_call_secs": 0,
+        "conversation_turn_metrics": null,
+        "rag_retrieval_info": null,
+        "llm_usage": null,
+        "interrupted": true,
+        "original_message": "Hola, soy CATA, tu asesora especializada en tratamientos Dermaccina.\n\nEstoy encantada de poder conversar contigo hoy. Mi especialidad es ayudarte a encontrar exactamente el tratamiento que tu piel necesita para lucir espectacular.\n\n¿Puedo preguntarte qué es lo que más te preocupa de tu piel en este momento? Me encantaría conocerte mejor para recomendarte la solución perfecta.",
+        "source_medium": null
+      },
+      {
+        "role": "user",
+        "message": "Hola, mucho gusto. ¿Cómo estás? Mi nombre es Catalina Forero, tengo 17 años y mi número telefónico es 316-860-3691. Vivo en Barranquilla, Atlántico, Colombia.",
+        "tool_calls": [],
+        "tool_results": [],
+        "feedback": null,
+        "llm_override": null,
+        "time_in_call_secs": 6,
+        "conversation_turn_metrics": null,
+        "rag_retrieval_info": null,
+        "llm_usage": null,
+        "interrupted": false,
+        "original_message": null,
+        "source_medium": "audio"
+      },
+      {
+        "role": "agent",
+        "message": "¡Hola, Catalina! Es un gusto conocerte. Estoy aquí para ayudarte con cualquier duda...",
+        "tool_calls": [],
+        "tool_results": [],
+        "feedback": null,
+        "llm_override": null,
+        "time_in_call_secs": 26,
+        "conversation_turn_metrics": {
+          "metrics": {
+            "convai_llm_service_ttf_sentence": {
+              "elapsed_time": 1.4510934483259916
+            },
+            "convai_llm_service_ttfb": {
+              "elapsed_time": 1.3556558098644018
+            }
+          }
+        },
+        "rag_retrieval_info": {
+          "chunks": [
+            {
+              "document_id": "M93DCLKLMnBtzMQDtDSi",
+              "chunk_id": "JTYdscJFnm62tH9bk7uE",
+              "vector_distance": 0.06922334432601929
+            },
+            {
+              "document_id": "M93DCLKLMnBtzMQDtDSi",
+              "chunk_id": "y0TVBVCnsuwiA5qSY6o9",
+              "vector_distance": 0.07669186592102051
+            },
+            {
+              "document_id": "M93DCLKLMnBtzMQDtDSi",
+              "chunk_id": "q3T22GqjbxBoMsAKbVPN",
+              "vector_distance": 0.07805442810058594
+            },
+            {
+              "document_id": "M93DCLKLMnBtzMQDtDSi",
+              "chunk_id": "E88aTp4rcpSsYXuB7Tez",
+              "vector_distance": 0.08337438106536865
+            },
+            {
+              "document_id": "M93DCLKLMnBtzMQDtDSi",
+              "chunk_id": "584MiiFe7mZTifYDkcJ0",
+              "vector_distance": 0.08360153436660767
+            },
+            {
+              "document_id": "M93DCLKLMnBtzMQDtDSi",
+              "chunk_id": "SHBMzrPbJgLYIXtHyAQi",
+              "vector_distance": 0.08365488052368164
+            },
+            {
+              "document_id": "lmF1P1NJa8w8NMwtSjnx",
+              "chunk_id": "G2ygo9nqPtSCywygEq7O",
+              "vector_distance": 0.08544701337814331
+            },
+            {
+              "document_id": "M93DCLKLMnBtzMQDtDSi",
+              "chunk_id": "ozEaGXfgObfU5loeLiAG",
+              "vector_distance": 0.08588242530822754
+            },
+            {
+              "document_id": "M93DCLKLMnBtzMQDtDSi",
+              "chunk_id": "v8Ctod8sDtBOAbT2RMRA",
+              "vector_distance": 0.0872187614440918
+            },
+            {
+              "document_id": "lmF1P1NJa8w8NMwtSjnx",
+              "chunk_id": "HVGsVMmIoQs1940fG7FI",
+              "vector_distance": 0.08734130859375
+            },
+            {
+              "document_id": "M93DCLKLMnBtzMQDtDSi",
+              "chunk_id": "GF3IMesq1FAnpBL2nHCd",
+              "vector_distance": 0.08767783641815186
+            },
+            {
+              "document_id": "M93DCLKLMnBtzMQDtDSi",
+              "chunk_id": "637O0FIWXBucpZB4pGn5",
+              "vector_distance": 0.08782464265823364
+            },
+            {
+              "document_id": "M93DCLKLMnBtzMQDtDSi",
+              "chunk_id": "aUZXoeIqV5rObJA7SR7D",
+              "vector_distance": 0.08824598789215088
+            },
+            {
+              "document_id": "M93DCLKLMnBtzMQDtDSi",
+              "chunk_id": "EUA9KVo95vqpwNTFvkiv",
+              "vector_distance": 0.08829426765441895
+            },
+            {
+              "document_id": "M93DCLKLMnBtzMQDtDSi",
+              "chunk_id": "o3dLBZ67QFftjkJW6a6e",
+              "vector_distance": 0.08840125799179077
+            },
+            {
+              "document_id": "M93DCLKLMnBtzMQDtDSi",
+              "chunk_id": "DNltB5cwnZ3qROLjQiP8",
+              "vector_distance": 0.0884101390838623
+            },
+            {
+              "document_id": "M93DCLKLMnBtzMQDtDSi",
+              "chunk_id": "25XQXHxGR6efpBkX1iGI",
+              "vector_distance": 0.0889887809753418
+            },
+            {
+              "document_id": "M93DCLKLMnBtzMQDtDSi",
+              "chunk_id": "WlguaRnmjGZJIPvCoY4k",
+              "vector_distance": 0.08900922536849976
+            },
+            {
+              "document_id": "M93DCLKLMnBtzMQDtDSi",
+              "chunk_id": "h9MZLB6KlyHCLS6SYKY1",
+              "vector_distance": 0.08904409408569336
+            },
+            {
+              "document_id": "4BrfLcmCiI50RHWmkIJk",
+              "chunk_id": "ltGJxtT2bu97BKMcOWi6",
+              "vector_distance": 0.0894007682800293
+            }
+          ],
+          "embedding_model": "multilingual_e5_large_instruct",
+          "retrieval_query": "¿Qué tratamiento de Dermaccina es adecuado para mí?\n",
+          "rag_latency_secs": 0.703755441121757
+        },
+        "llm_usage": {
+          "model_usage": {
+            "gpt-4o-mini": {
+              "input": {
+                "tokens": 8446,
+                "price": 0.0012668999999999998
+              },
+              "input_cache_read": {
+                "tokens": 0,
+                "price": 0
+              },
+              "input_cache_write": {
+                "tokens": 0,
+                "price": 0
+              },
+              "output_total": {
+                "tokens": 112,
+                "price": 0.00006720000000000001
+              }
+            }
+          }
+        },
+        "interrupted": true,
+        "original_message": "¡Hola, Catalina! Es un gusto conocerte. Estoy aquí para ayudarte con cualquier duda o preocupación sobre el cuidado de tu piel. Quiero recordarte que esta llamada está siendo grabada para fines de calidad y capacitación. Al continuar, autorizas la grabación. \n\n¿Me puedes contar qué es lo que más te preocupa de tu piel en este momento?",
+        "source_medium": null
+      }
+    ],
+    "metadata": {
+      "start_time_unix_secs": 1752618098,
+      "accepted_time_unix_secs": 1752618098,
+      "call_duration_secs": 31,
+      "cost": 252,
+      "deletion_settings": {
+        "deletion_time_unix_secs": null,
+        "deleted_logs_at_time_unix_secs": null,
+        "deleted_audio_at_time_unix_secs": null,
+        "deleted_transcript_at_time_unix_secs": null,
+        "delete_transcript_and_pii": false,
+        "delete_audio": false
+      },
+      "feedback": {
+        "overall_score": null,
+        "likes": 0,
+        "dislikes": 0
+      },
+      "authorization_method": "signed_url",
+      "charging": {
+        "dev_discount": false,
+        "is_burst": false,
+        "tier": "pro",
+        "llm_usage": {
+          "irreversible_generation": {
+            "model_usage": {
+              "gpt-4o-mini": {
+                "input": {
+                  "tokens": 8446,
+                  "price": 0.0012668999999999998
+                },
+                "input_cache_read": {
+                  "tokens": 0,
+                  "price": 0
+                },
+                "input_cache_write": {
+                  "tokens": 0,
+                  "price": 0
+                },
+                "output_total": {
+                  "tokens": 112,
+                  "price": 0.00006720000000000001
+                }
+              }
+            }
+          },
+          "initiated_generation": {
+            "model_usage": {
+              "gpt-4o-mini": {
+                "input": {
+                  "tokens": 16224,
+                  "price": 0.0024336
+                },
+                "input_cache_read": {
+                  "tokens": 0,
+                  "price": 0
+                },
+                "input_cache_write": {
+                  "tokens": 0,
+                  "price": 0
+                },
+                "output_total": {
+                  "tokens": 114,
+                  "price": 0.00006840000000000001
+                }
+              }
+            }
+          }
+        },
+        "llm_price": 0.0025020000000000003,
+        "llm_charge": 14,
+        "call_charge": 238
+      },
+      "phone_call": {
+        "direction": "outbound",
+        "phone_number_id": "phnum_01jzwveqrkf1zrdtt784vz521w",
+        "agent_number": "+576076911311",
+        "external_number": "+573168603691",
+        "type": "twilio",
+        "stream_sid": "MZ1d03ae8e4ca6a601d1ea3fe3af6b7736",
+        "call_sid": "CAda9f07d93bbbcbccc2bbabc83f4fbcb0"
+      },
+      "batch_call": {
+        "batch_call_id": "btcal_01k082vb76f3vamjrdcwkpsj4n",
+        "batch_call_recipient_id": "rcpt_01k082vb7heatvcpf1f00x76fq"
+      },
+      "termination_reason": "Client disconnected: 1005",
+      "error": null,
+      "main_language": "es",
+      "rag_usage": {
+        "usage_count": 1,
+        "embedding_model": "multilingual_e5_large_instruct"
+      },
+      "text_only": false,
+      "features_usage": {
+        "language_detection": {
+          "enabled": true,
+          "used": false
+        },
+        "transfer_to_agent": {
+          "enabled": false,
+          "used": false
+        },
+        "transfer_to_number": {
+          "enabled": false,
+          "used": false
+        },
+        "multivoice": {
+          "enabled": false,
+          "used": false
+        },
+        "pii_zrm_workspace": false,
+        "pii_zrm_agent": false
+      },
+      "eleven_assistant": {
+        "is_eleven_assistant": false
+      },
+      "initiator_id": null,
+      "conversation_initiation_source": "unknown",
+      "conversation_initiation_source_version": null
+    },
+    "analysis": {
+      "evaluation_criteria_results": {
+        "cata_recoleccion_datos": {
+          "criteria_id": "cata_recoleccion_datos",
+          "result": "success",
+          "rationale": "El objetivo era verificar la recolección de datos importantes. El usuario proporcionó su nombre (Catalina Forero), edad (17 años), número de teléfono (316-860-3691) y ubicación (Barranquilla, Atlántico, Colombia), lo que indica que la recolección de datos fue exitosa."
+        },
+        "cata_experiencia_cliente": {
+          "criteria_id": "cata_experiencia_cliente",
+          "result": "failure",
+          "rationale": "La conversación es muy corta y solo incluye saludos iniciales. No hay suficiente información para evaluar la experiencia positiva del cliente."
+        },
+        "cata_protocolo_ventas": {
+          "criteria_id": "cata_protocolo_ventas",
+          "result": "unknown",
+          "rationale": "La conversación es demasiado corta para determinar si se adhiere al protocolo de ventas. Solo hay un saludo inicial y una breve presentación, sin información sobre el proceso de venta."
+        },
+        "cata_manejo_objeciones": {
+          "criteria_id": "cata_manejo_objeciones",
+          "result": "failure",
+          "rationale": "La conversación es demasiado corta y no presenta ninguna objeción por parte del usuario. Por lo tanto, no se puede evaluar el manejo de objeciones por parte del agente."
+        },
+        "cata_calificacion_lead": {
+          "criteria_id": "cata_calificacion_lead",
+          "result": "unknown",
+          "rationale": "La conversación es demasiado corta para determinar si se verificó la correcta calificación del prospecto. No hay información sobre los criterios de calificación ni acciones tomadas para evaluarlos."
+        },
+        "cata_venta_exitosa": {
+          "criteria_id": "cata_venta_exitosa",
+          "result": "unknown",
+          "rationale": "La conversación es muy corta y solo incluye saludos iniciales. No hay información sobre una posible venta o transacción completada. Por lo tanto, no se puede determinar si se completó una venta exitosa."
+        }
+      },
+      "data_collection_results": {
+        "condition_duration_months": {
+          "data_collection_id": "condition_duration_months",
+          "value": 0,
+          "json_schema": {
+            "type": "integer",
+            "description": "Convierte la duración del problema a meses. \"2 años\" = 24, \"6 meses\" = 6, \"toda la vida\" = 360 (30 años), \"hace poco\" = 1. Si se menciona cuándo empezó, calcula los meses transcurridos. Si no se especifica tiempo, retorna 0.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "No se menciona la duración de ningún problema en el texto proporcionado. Por lo tanto, no se puede calcular la duración en meses."
+        },
+        "follow_up_scheduled": {
+          "data_collection_id": "follow_up_scheduled",
+          "value": false,
+          "json_schema": {
+            "type": "boolean",
+            "description": "Determina si se programó un seguimiento específico. Retorna true si se acordó \"llamar mañana\", \"contactar en una semana\", \"enviar información por WhatsApp\", o cualquier acción de seguimiento con tiempo definido. Retorna false si no se acordaron pasos específicos.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "No se acordó ningún seguimiento específico en la conversación proporcionada. No se menciona \"llamar mañana\", \"contactar en una semana\", \"enviar información por WhatsApp\", ni ninguna otra acción de seguimiento con un tiempo definido."
+        },
+        "discount_percentage": {
+          "data_collection_id": "discount_percentage",
+          "value": 0,
+          "json_schema": {
+            "type": "integer",
+            "description": "Extrae el porcentaje de descuento ofrecido. \"60% de descuento\" = 60, \"50% off\" = 50, \"mitad de precio\" = 50. Si se ofrece descuento en cantidad fija, calcula el porcentaje aproximado. Si no se ofreció descuento, retorna 0.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "No se menciona ningún descuento en la conversación."
+        },
+        "condition_severity_score": {
+          "data_collection_id": "condition_severity_score",
+          "value": 0,
+          "json_schema": {
+            "type": "integer",
+            "description": "Evalúa la severidad del problema en una escala del 1 al 10 basándote en las palabras del cliente. 1-3: leve (\"un poco\", \"no es grave\"), 4-6: moderado (\"me molesta\", \"bastante\"), 7-10: severo (\"terrible\", \"no puedo salir\", \"afecta mi vida\"). Si no se puede determinar, retorna 0.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "No se puede determinar la severidad del problema ya que el usuario solo se presenta y no menciona ningún problema o queja. Por lo tanto, el valor es 0."
+        },
+        "skin_condition": {
+          "data_collection_id": "skin_condition",
+          "value": "Problema de piel no especificado",
+          "json_schema": {
+            "type": "string",
+            "description": "Extrae la condición dermatológica específica que menciona el cliente. Busca términos como \"vitiligo\", \"psoriasis\", \"acné\", \"hongos\", \"dermatitis\", \"eczema\", \"manchas\", \"cicatrices\". Si el cliente describe síntomas sin nombrar la condición, extrae la descripción exacta. Si no se especifica, retorna \"Problema de piel no especificado\".",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "El cliente no menciona ninguna condición dermatológica específica en el fragmento de conversación proporcionado. Por lo tanto, se retorna \"Problema de piel no especificado\"."
+        },
+        "customer_age": {
+          "data_collection_id": "customer_age",
+          "value": 17,
+          "json_schema": {
+            "type": "integer",
+            "description": "Extrae la edad numérica del cliente cuando se menciona directamente (\"Tengo 35 años\", \"Soy de 42 años\"). Si se menciona un rango de edad (\"Entre 30 y 35\"), extrae el número promedio (32). Si no se menciona edad específica, retorna 0.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "El usuario menciona directamente su edad: \"tengo 17 años\". Por lo tanto, se extrae el número 17."
+        },
+        "customer_full_name": {
+          "data_collection_id": "customer_full_name",
+          "value": "Catalina Forero",
+          "json_schema": {
+            "type": "string",
+            "description": "Extrae el nombre completo del cliente de la transcripción. Busca cuando CATA pregunta \"¿Cuál es su nombre completo?\" o cuando el cliente se presenta diciendo \"Mi nombre es...\", \"Soy...\", \"Me llamo...\". Si solo se menciona el primer nombre, extrae únicamente eso. Si no se proporciona nombre, retorna \"No proporcionado\".",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "El cliente se presenta diciendo \"Mi nombre es Catalina Forero\". Por lo tanto, el nombre completo del cliente es Catalina Forero."
+        },
+        "interest_level_score": {
+          "data_collection_id": "interest_level_score",
+          "value": 5,
+          "json_schema": {
+            "type": "integer",
+            "description": "Evalúa el nivel de interés del cliente en una escala del 1 al 10. 1-3: bajo interés (\"no me convence\", \"no creo\"), 4-6: interés moderado (\"suena interesante\", \"tal vez\"), 7-10: alto interés (\"me encanta\", \"quiero probarlo\", \"suena perfecto\"). Si no se puede determinar, retorna 5.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "No se puede determinar el nivel de interés del cliente en los tratamientos Dermaccina a partir de la conversación proporcionada. La conversación inicial solo incluye saludos y presentación."
+        },
+        "available_budget_amount": {
+          "data_collection_id": "available_budget_amount",
+          "value": 0,
+          "json_schema": {
+            "type": "number",
+            "description": "Extrae el monto numérico del presupuesto disponible. \"$200\" = 200.00, \"doscientos dólares\" = 200.00, \"entre $100 y $300\" = 200.00 (promedio). Si dice \"lo que sea necesario\" = 999.99, \"no mucho\" = 50.00, \"tengo limitaciones\" = 100.00. Si no se menciona, retorna 0.00.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "No se menciona ningún presupuesto en la conversación. Por lo tanto, el valor es 0.00."
+        },
+        "customer_phone": {
+          "data_collection_id": "customer_phone",
+          "value": "316-860-3691",
+          "json_schema": {
+            "type": "string",
+            "description": "Identifica el número de teléfono del cliente mencionado en la conversación. Busca patrones como números de 10 dígitos, códigos de área, o cuando CATA pregunta \"¿Cuál es su número de teléfono?\". Formato esperado: +1-XXX-XXX-XXXX o similar. Si no se proporciona, retorna \"No proporcionado\".",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "El usuario proporciona su número de teléfono como 316-860-3691 en el mensaje del 2025-07-15T22:21:44+00:00."
+        },
+        "sale_confirmed": {
+          "data_collection_id": "sale_confirmed",
+          "value": false,
+          "json_schema": {
+            "type": "boolean",
+            "description": "Determina si el cliente confirmó la compra al final de la conversación. Retorna true si dice \"sí, lo compro\", \"acepto\", \"procede con la orden\", o proporciona datos de envío. Retorna false para cualquier otra respuesta como \"voy a pensarlo\", \"no me interesa\", \"llámame después\".",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "La conversación termina sin que el cliente confirme la compra. No hay ninguna indicación de que haya aceptado la oferta, proporcionado datos de envío o expresado su intención de comprar."
+        },
+        "has_tried_treatments": {
+          "data_collection_id": "has_tried_treatments",
+          "value": null,
+          "json_schema": {
+            "type": "boolean",
+            "description": "Determina si el cliente ha probado tratamientos anteriores. Retorna true si menciona cualquier medicamento, crema, tratamiento médico, remedios caseros, o visitas a dermatólogos. Retorna false si dice \"nunca he probado nada\" o \"es la primera vez que busco tratamiento\".",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "No hay información en el diálogo sobre si la usuaria ha probado tratamientos anteriores. Por lo tanto, no se puede determinar si ha usado medicamentos, cremas, tratamientos médicos, remedios caseros o visitado dermatólogos."
+        },
+        "customer_location": {
+          "data_collection_id": "customer_location",
+          "value": "Barranquilla, Atlántico, Colombia",
+          "json_schema": {
+            "type": "string",
+            "description": "Identifica la ciudad, estado o país donde vive el cliente. Busca menciones como \"Vivo en Miami\", \"Soy de Orlando\", \"Estoy en Florida\". Incluye ciudad y estado si ambos se mencionan. Si no se proporciona, retorna \"No proporcionado\".",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "El usuario indica explícitamente que vive en Barranquilla, Atlántico, Colombia. Por lo tanto, se extrae esta información."
+        },
+        "interested_in_financing": {
+          "data_collection_id": "interested_in_financing",
+          "value": false,
+          "json_schema": {
+            "type": "boolean",
+            "description": "Determina si el cliente muestra interés en opciones de financiamiento o pagos en cuotas. Retorna true si pregunta sobre \"pagos\", \"cuotas\", \"financiamiento\", o si CATA ofrece estas opciones y el cliente responde positivamente. Retorna false si prefiere pago único o no muestra interés.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "El cliente no muestra interés en opciones de financiamiento o pagos en cuotas en este fragmento de la conversación. No pregunta sobre \"pagos\", \"cuotas\", \"financiamiento\", ni CATA ofrece estas opciones."
+        },
+        "price_mentioned_amount": {
+          "data_collection_id": "price_mentioned_amount",
+          "value": 0,
+          "json_schema": {
+            "type": "number",
+            "description": "Extrae el precio numérico que CATA mencionó para el producto. \"$199.99\" = 199.99, \"doscientos dólares\" = 200.00. Si se mencionan descuentos, extrae el precio final con descuento. Si no se menciona precio, retorna 0.00.",
+            "dynamic_variable": "",
+            "constant_value": ""
+          },
+          "rationale": "No se menciona ningún precio en la conversación proporcionada. Por lo tanto, el valor extraído es 0.00."
+        }
+      },
+      "call_successful": "failure",
+      "transcript_summary": "CATA, an AI assistant specializing in Dermaccina treatments, greets Catalina Forero. Catalina introduces herself, providing her age, phone number, and location in Barranquilla, Colombia. CATA expresses pleasure in meeting her and offers assistance.\n"
+    },
+    "conversation_initiation_client_data": {
+      "conversation_config_override": {
+        "tts": {
+          "voice_id": null
+        },
+        "conversation": null,
+        "agent": {
+          "first_message": null,
+          "language": "es",
+          "prompt": null
+        }
+      },
+      "custom_llm_extra_body": {},
+      "user_id": null,
+      "dynamic_variables": {
+        "city": "Barranquilla",
+        "system__agent_id": "agent_01jzg2ck1gfhcskcqxnnr0bzde",
+        "system__conversation_id": "conv_01k082vbn2ff7891sfb80zpkdd",
+        "system__caller_id": "+576076911311",
+        "system__called_number": "+573168603691",
+        "system__call_duration_secs": 31,
+        "system__time_utc": "2025-07-15T22:22:09.962480+00:00",
+        "system__call_sid": "CAda9f07d93bbbcbccc2bbabc83f4fbcb0"
+      }
+    }
+  }
+}]
