@@ -1,6 +1,6 @@
 // Imports
 import { getCode as getCountryCode, getName as getCountryName } from 'country-list';
-import { getStateCodeByStateName } from 'us-state-codes';
+import { UsaStates } from 'usa-states';
 
 // -------------------------------------------------------------------------
 
@@ -26,45 +26,30 @@ export function removeSymbolRegex(symbol: string, text: string): string {
  */
 export function convertToTwoCharCode(location: string): string {
   try {
-    // Si la entrada está vacía o es null/undefined, retornar string vacía
     if (!location || typeof location !== 'string') {
       return '';
     }
-
-    // Limpiar y normalizar la entrada
     const cleanLocation = location.trim();
-
-    // Si ya es un código de 2 caracteres, validar y retornar
     if (cleanLocation.length === 2) {
       const upperCode = cleanLocation.toUpperCase();
-
-      // Verificar si es un código de país válido
       const countryName = getCountryName(upperCode);
       if (countryName) {
         return upperCode;
       }
-
-      // Si no es país, asumir que podría ser estado y retornar tal como está
       return upperCode;
     }
-
-    // Intentar convertir como país primero
     const countryCode = getCountryCode(cleanLocation);
     if (countryCode) {
       return countryCode.toUpperCase();
     }
-
-    // Si no es país, intentar convertir como estado de EE.UU.
-    const stateCode = getStateCodeByStateName(cleanLocation);
-    if (stateCode) {
-      return stateCode.toUpperCase();
+    // Buscar código de estado de EE.UU. usando usa-states
+    const usStates = new UsaStates();
+    const state = usStates.states.find(s => s.name.toLowerCase() === cleanLocation.toLowerCase());
+    if (state) {
+      return state.abbreviation;
     }
-
-    // Si no se pudo convertir, retornar string vacía
     return '';
-
   } catch (error) {
-    // En caso de cualquier error, retornar string vacía como se solicitó
     console.warn('Error converting location to two-char code:', error);
     return '';
   }

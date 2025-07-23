@@ -1,5 +1,5 @@
 import { Response } from 'express';
-import { ApiResponse } from '../interface/User';
+import { ApiResponse } from '../interface/init';
 
 export class ResponseHelper {
   static success<T>(res: Response, data: T, message: string = 'Success'): Response {

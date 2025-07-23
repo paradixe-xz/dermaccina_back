@@ -1,11 +1,23 @@
-// import { createClient } from '@supabase/supabase-js';
-// import dotenv from 'dotenv';
+import { MongoClient } from 'mongodb';
+import dotenv from 'dotenv';
 
-// dotenv.config();
+dotenv.config();
 
-// const supabaseUrl = process.env.SUPABASE_URL!;
-// const supabaseKey = process.env.SUPABASE_ANON_KEY!;
+if (!process.env.MONGO_URI) {
+  throw new Error('MONGO_URI is not defined in environment variables');
+}
 
-// export const supabase = createClient(supabaseUrl, supabaseKey);
+const client = new MongoClient(process.env.MONGO_URI!, {
+  tls: true
+});
+let isConnected = false;
 
-// export default supabase;
+export async function connectMongo() {
+  if (!isConnected) {
+    await client.connect();
+    isConnected = true;
+  }
+  return client.db();
+}
+
+export default client;

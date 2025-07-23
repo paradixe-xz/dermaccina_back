@@ -4,6 +4,7 @@ import { Request, Response, NextFunction } from 'express';
 // Helpers
 import { ResponseHelper } from '../helpers/responseHelper';
 import { convertToTwoCharCode, removeSymbolRegex } from '../helpers/dataDebugging';
+import { connectMongo } from '../config/database';
 
 export class InfoController {
   static async createLead(req: Request, res: Response, next: NextFunction) {
@@ -32,13 +33,14 @@ export class InfoController {
       const customerState = dataCollection.customer_state?.value || "";
       const customerSkinCondition = dataCollection.skin_condition?.value || "";
 
-      // Preparar datos para enviar a la API externa
+
+      // Preparar datos para guardar y enviar
       const leadData = {
         name: customerName,
         last_name: customerLastname,
-        //phone_number: "1234567891",
         media: "WEB",
-        phone: removeSymbolRegex("-", customerPhone),
+        // phone_number: "",
+        phone_number: removeSymbolRegex("-", customerPhone),
         entervia: "9548092011",
         email: customerEmail,
         city: customerCity,
@@ -49,6 +51,16 @@ export class InfoController {
         country: convertToTwoCharCode(customerCountry),
         comment: customerSkinCondition,
       };
+
+      // Guardar en MongoDB antes de enviar a la API externa
+      try {
+        const db = await connectMongo();
+        await db.collection('leads').insertOne(leadData);
+        console.log('Lead saved to MongoDB');
+      } catch (mongoErr) {
+        console.error('Error saving lead to MongoDB:', mongoErr);
+        // Puedes decidir si continuar o retornar error aquí
+      }
 
       console.log('Sending lead data:', JSON.stringify(leadData, null, 2));
 
@@ -73,26 +85,21 @@ export class InfoController {
       console.log('TSC API Response:', tscResponse);
 
       return res.status(200);
-      // return ResponseHelper.success(res, {
-      //   message: 'Lead processed successfully',
-      //   leadData: {
-      //     name: customerName,
-      //     phone: customerPhone
-      //   },
-      //   tscResponse
-      // }, 'Lead sent to TSC API successfully');
 
     } catch (error) {
       console.error('Error processing lead:', error);
       next(error);
     }
   }
-  // static async getUsers(req: Request, res: Response, next: NextFunction) {
-  //   try {
-  //     const users = await UserModel.getAll();
-  //     return ResponseHelper.success(res, users, 'Users retrieved successfully');
-  //   } catch (error) {
-  //     next(error);
-  //   }
-  // }
+
+  static async getLeads(req: Request, res: Response, next: NextFunction) {
+    try {
+      const db = await connectMongo();
+      const leads = await db.collection('leads').find({}).toArray();
+      return res.status(200).json(leads);
+    } catch (error) {
+      console.error('Error fetching leads:', error);
+      return ResponseHelper.error(res, 'Error fetching leads from database', 500);
+    }
+  }
 }

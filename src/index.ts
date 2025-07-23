@@ -22,10 +22,18 @@ app.use('/api', routes);
 app.use(errorHandler);
 
 // Start server
-app.listen(config.port, () => {
-  console.log(`🚀 Server running on port ${config.port}`);
-  console.log(`📱 Environment: ${config.nodeEnv}`);
-  console.log(`🌐 API available at: http://localhost:${config.port}/api`);
-});
+config.connectMongo()
+  .then(() => {
+    console.log('✅ Connected to MongoDB');
+    app.listen(config.port, () => {
+      console.log(`🚀 Server running on port ${config.port}`);
+      console.log(`📱 Environment: ${config.nodeEnv}`);
+      console.log(`🌐 API available at: http://localhost:${config.port}/api`);
+    });
+  })
+  .catch((err: any) => {
+    console.error('❌ Failed to connect to MongoDB:', err);
+    process.exit(1);
+  });
 
 export default app;
