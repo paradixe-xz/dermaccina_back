@@ -1,7 +1,7 @@
 {
   "name": "dermaccina-back",
   "version": "1.0.0",
-  "description": "Backend API with Express.js, TypeScript and Supabase",
+  "description": "Backend API with Express.js, TypeScript and Mongo",
   "main": "dist/index.js",
   "scripts": {
     "dev": "nodemon src/index.ts",

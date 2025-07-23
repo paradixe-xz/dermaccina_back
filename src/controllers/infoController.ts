@@ -5,8 +5,18 @@ import { Request, Response, NextFunction } from 'express';
 import { ResponseHelper } from '../helpers/responseHelper';
 import { convertToTwoCharCode, removeSymbolRegex } from '../helpers/dataDebugging';
 import { connectMongo } from '../config/database';
+import { config } from '../config';
 
 export class InfoController {
+  static cleanLeadDataByResmsg(leadData: any, resmsg: string) {
+    const fields = ['country', 'email', 'phone_number', 'city', 'address', 'state', 'zip', 'zip4', 'comment'];
+    for (const field of fields) {
+      if (resmsg.toLowerCase().includes(field)) {
+        leadData[field] = '';
+      }
+    }
+  }
+
   static async createLead(req: Request, res: Response, next: NextFunction) {
     try {
       const info = req.body;
@@ -21,35 +31,31 @@ export class InfoController {
       }
 
       // Extraer nombre y teléfono
-      const customerName = dataCollection.customer_name?.value || "";
-      const customerLastname = dataCollection.customer_last_name?.value || "";
       const customerPhone = dataCollection.customer_phone?.value || "";
       const customerEmail = dataCollection.customer_email?.value || "";
       const customerCountry = dataCollection.customer_country?.value || "";
-      const customerCity = dataCollection.customer_city?.value || "";
       const customerAddress = dataCollection.customer_address?.value || "";
       const customerZip = dataCollection.customer_zip?.value || "";
       const customerZip4 = dataCollection.customer_zip4?.value || "";
       const customerState = dataCollection.customer_state?.value || "";
-      const customerSkinCondition = dataCollection.skin_condition?.value || "";
 
 
       // Preparar datos para guardar y enviar
       const leadData = {
-        name: customerName,
-        last_name: customerLastname,
+        name: dataCollection.customer_name?.value,
+        last_name: dataCollection.customer_last_name?.value,
         media: "WEB",
         // phone_number: "",
         phone_number: removeSymbolRegex("-", customerPhone),
         entervia: "9548092011",
         email: customerEmail,
-        city: customerCity,
+        city: dataCollection.customer_city?.value || "",
         address: customerAddress,
         state: convertToTwoCharCode(customerState),
         zip: customerZip,
         zip4: customerZip4,
         country: convertToTwoCharCode(customerCountry),
-        comment: customerSkinCondition,
+        comment: dataCollection.skin_condition?.value,
       };
 
       // Guardar en MongoDB antes de enviar a la API externa
@@ -64,21 +70,68 @@ export class InfoController {
 
       console.log('Sending lead data:', JSON.stringify(leadData, null, 2));
 
-      //todo: verificar que esten los datos requeridos, sino no enviar
       // Enviar datos a la API externa
-      const response = await fetch(`${process.env.TSC_API_URL}/leads`, {
+      const response = await fetch(`${config.tscApi.url}/leads`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.TSC_API_TOKEN}`
+          'Authorization': `Bearer ${config.tscApi.token}`
         },
         body: JSON.stringify(leadData)
       });
 
+
       if (!response.ok) {
-        const errorText = await response.text();
-        console.error('TSC API Error:', response.status, errorText);
-        return ResponseHelper.error(res, `Failed to send lead to TSC API: ${response.status}`, 500);
+        let errorJson: any = {};
+        try {
+          errorJson = await response.json();
+        } catch (e) {
+          errorJson = { resmsg: '' };
+        }
+        const resmsg = errorJson?.resmsg || '';
+        InfoController.cleanLeadDataByResmsg(leadData, resmsg);
+        console.error('TSC API Error:', response.status, resmsg);
+
+        // Reintentar una vez con los campos limpiados
+        const retryResponse = await fetch(`${config.tscApi.url}/leads`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${config.tscApi.token}`
+          },
+          body: JSON.stringify(leadData)
+        });
+
+        if (!retryResponse.ok) {
+          // Limpiar address, state, country, comment y reintentar una vez más
+          leadData.address = '';
+          leadData.state = '';
+          leadData.country = '';
+          leadData.comment = '';
+
+          const thirdResponse = await fetch(`${config.tscApi.url}/leads`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${config.tscApi.token}`
+            },
+            body: JSON.stringify(leadData)
+          });
+
+          if (!thirdResponse.ok) {
+            const thirdErrorJson = await thirdResponse.json().catch(() => ({}));
+            console.error('TSC API Final Error:', thirdErrorJson);
+            return res.status(500).json({ error: 'Failed to send lead to TSC API after 3 attempts', apiResponse: thirdErrorJson });
+          }
+
+          const thirdTscResponse = await thirdResponse.json();
+          console.log('TSC API Third Attempt Response:', thirdTscResponse);
+          return res.status(200).json({ retried: 2, tscResponse: thirdTscResponse });
+        }
+
+        const retryTscResponse = await retryResponse.json();
+        console.log('TSC API Retry Response:', retryTscResponse);
+        return res.status(200).json({ retried: true, tscResponse: retryTscResponse });
       }
 
       const tscResponse = await response.json();

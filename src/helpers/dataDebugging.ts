@@ -54,3 +54,4 @@ export function convertToTwoCharCode(location: string): string {
     return '';
   }
 }
+
